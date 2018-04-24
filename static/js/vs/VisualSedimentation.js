@@ -8,7 +8,7 @@ var scripts = document.getElementsByTagName('script'),
 
 // external Librairy 
 includeJS(_vsDirectory+'lib/d3/d3.v2.js');
-includeJS(_vsDirectory+'lib/jQuery/jquery-1.4.2.min.js');
+includeJS(_vsDirectory+'lib/jQuery/jquery-1.10.2.min.js');
 includeJS(_vsDirectory+'lib/Box2DWeb/Box2DWeb-2.1.a.3.min.js');
 
 // Core, n_vsDirectory+'d

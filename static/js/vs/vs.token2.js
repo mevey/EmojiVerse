@@ -265,7 +265,7 @@ $.fn._vs.token = {
         this.applyImpulse(this.myobj,token.impulse.angle,token.impulse.power);
       }
 
-      if(typeof(token.fillStyle) =="undefined"){   token.fillStyle  =     "rgba(255,255,255,0.8)"} // this.colorRange(token.category) } //
+      if(typeof(token.fillStyle) =="undefined"){   token.fillStyle  =     "rgba(255,255,255,0)"} // this.colorRange(token.category) } //
       //if(typeof(token.stokeStyle)=="undefined"){   token.stokeStyle = "#000"}//"rgba(0,0,0,0.5)" }
       if(typeof(token.lineWidth) =="undefined"){   token.lineWidth  = 0 }
       if(typeof(token.type)  =="undefined"){       token.type="token"   }

@@ -34,8 +34,8 @@ function update_column(data, city, position) {
 }
 
  mySettings = {
-    width:$(".container-fluid").width(),
-    height:$(".container-fluid").height(),
+    width:$("#barChart").width(),
+    height:700,
     data:{
          model:
             [
@@ -74,10 +74,10 @@ function update_column(data, city, position) {
     }
     },
     chart:{
-         width:$(".container-fluid").width(),
-         height:$(".container-fluid").height(),
-         wallColor:"rgba(255,255,255, 1)",
-         floorColor:"rgba(255,255,255, 1",
+         width:$("#barChart").width(),
+         height:700,
+         wallColor:"rgba(255,255,255, 0)",
+         floorColor:"rgba(255,255,255, 0",
          spacer:0,
          type:'StackedAreaChart',
         },
