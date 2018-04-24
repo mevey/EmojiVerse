@@ -1,9 +1,9 @@
 var myBarChart;
 var images = [
-    "/static/img/smiley.png",
-    "/static/img/heart.png",
-    "/static/img/smileyhearts.png",
-    "/static/img/poop.png",
+    "static/img/smiley.png",
+    "static/img/heart.png",
+    "static/img/smileyhearts.png",
+    "static/img/poop.png",
 ]
 
 function get_votes() {
