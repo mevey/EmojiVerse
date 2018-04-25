@@ -421,7 +421,6 @@ $.fn._vs.strata = {
         for(var s=0; s<_this.settings.data.strata.length; s++) { 
           for(var l=0; l<_this.settings.data.strata[s].length; l++) {          
             if(_this.settings.data.strata[s][l].texture!=null) {
-              console.log("strata pattern")
               var pattern = vis.append('pattern')
                   .attr('id','RectanglePattern_'+s+"_"+l)
                   .attr('height', patternHeight)
@@ -435,7 +434,6 @@ $.fn._vs.strata = {
                   .attr('height', patternHeight)
                   .attr('width', patternWidth)
                   .attr('xlink:href', function() { return _this.settings.data.strata[s][l].texture.src;});
-              console.log( _this.settings.data.strata[s][l].texture.src)
             }
           }
         }     

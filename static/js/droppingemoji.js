@@ -2,40 +2,52 @@ var myBarChart;
 var images = [
     "static/img/smiley.png",
     "static/img/heart.png",
-    "static/img/smileyhearts.png",
+    "static/img/recycle.png",
     "static/img/poop.png",
 ]
+var STATE = [0,0,0,0]
 
-function get_votes() {
-//    $.ajax({
-//        url:'/get-votes',
-//        success: function (data) {
-//            total = data['nairobi'] + data['athens'] + data['bangkok'] + data['reykjavik']
-//            max_val = Math.max(data['nairobi'] ,data['athens'], data['bangkok'] ,data['reykjavik'])
-//            update_column(data, "nairobi",0, total, max_val)
-//            update_column(data, "athens",1, total, max_val)
-//            update_column(data, "bangkok",2, total, max_val)
-//            update_column(data, "reykjavik",3, total, max_val)
-//        }
-//    });
-    data = []
-    update_column(data, "nairobi",0)
-    update_column(data, "athens",1)
-    update_column(data, "bangkok",2)
-    update_column(data, "reykjavik",3)
+var RATES = [1, 1, 3, 1]
+
+function get_rates() {
+    url = "http://emojitracker.com/api/rankings";
+    $.ajax({
+        url:url,
+        success: function (data) {
+           if (STATE[0] > 0) {
+               RATES[0] = (data[0].score - STATE[0] )
+               RATES[1] = (data[1].score - STATE[1] )
+               RATES[2] = (data[2].score - STATE[2] )
+               RATES[3] = (data[115].score - STATE[3] )
+           }
+           STATE[0] = data[0].score
+           STATE[1] = data[1].score
+           STATE[2] = data[2].score
+           STATE[3] = data[115].score
+        }
+    });
 }
 
-function update_column(data, city, position) {
-   diff = position + 1
+get_rates()
+
+function drop_emoji(position) {
+       add_tokens(position)
+}
+
+function add_tokens(position) {
+   diff = Math.ceil(RATES[position])
    for (var i = 0; i < diff; i++ ) {
         myBarChart.addToken({category:position, texture: { src: images[position]}})
    }
 
 }
 
+var HEIGHT = $("#barChart").height();
+var WIDTH = $("#barChart").width();
+
  mySettings = {
-    width:$("#barChart").width(),
-    height:700,
+    width:WIDTH,
+    height:HEIGHT,
     data:{
          model:
             [
@@ -74,8 +86,8 @@ function update_column(data, city, position) {
     }
     },
     chart:{
-         width:$("#barChart").width(),
-         height:700,
+         width:WIDTH,
+         height:HEIGHT,
          wallColor:"rgba(255,255,255, 0)",
          floorColor:"rgba(255,255,255, 0",
          spacer:0,
@@ -85,8 +97,3 @@ function update_column(data, city, position) {
     layout:false
     }
 }
-
-$( document ).ready(function() {
-    myBarChart =  $("#barChart").vs(mySettings).data('visualSedimentation');
-    setInterval(function(){ get_votes() }, 500);
-})
