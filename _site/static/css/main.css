@@ -143,7 +143,7 @@ time {
 }
 
 .timeline ul li.in-view::after {
-  background: #F45B69;
+  background: blue;
 }
 
 .timeline ul li div {
