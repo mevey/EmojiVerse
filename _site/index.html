@@ -1,43 +1,25 @@
 <head>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Raleway" rel="stylesheet">
     <link rel="stylesheet" href="static/css/main.css"/>
 </head>
 <body>
     <div class="container-fluid" id="container">
-		<section class="emoji-rain">
-        	<div id="barChart" style="width:100%;height:600px;"></div>
-			<hr>
-			<div class="row">
-				<div class="col-md-3 text-center rain-box">
-					<div class="big-text">125</div>
-					<small>emoji per minute</small>
-					<p>The tears of joy emoji is the most popular emoji</p>
-				</div>
-				<div class="col-md-3 text-center rain-box">
-					<div class="big-text">56</div>
-					<small>emoji per minute</small>
-					<p>The tears of joy emoji is the most popular emoji</p>
-				</div>
-				<div class="col-md-3 text-center rain-box">
-					<div class="big-text">298</div>
-					<small>emoji per minute</small>
-					<p>The tears of joy emoji is the most popular emoji</p>
-				</div>
-				<div class="col-md-3 text-center rain-box">
-					<div class="big-text">2</div>
-					<small>emoji per minute</small>
-					<p>The pile of poop emoji</p>
-				</div>
+		<div class="row emoji-rain" style="height:100vh;">
+			<div class="col-xs-4 welcome-banner" style="margin-top:30vh;">
+				<h1>Welcome to the EmojiVerse</h1>
+				<p>Uncover the history and evolution of the fastes growing "language" in history, as well as the meaning and usage of these characters today</p>
+
+				<p><b>Real time use of emoji is shown on the left.</b></p>
+				<p>The tears of joy emoji is the most popular emoji and is used at a rate of 258 per minute on twitter.</p>
+
+				<p>What are emoji and where do they come from?</p>
 			</div>
-			<div class="row text-center welcome-banner" >
-				<p>Welcome to the</p>
-				<h1>EmojiVerse</h1>
-				<p>Uncover the history and evolution of the fastes growing "language" in history,</p>
-				<p>as well as the meaning and usage of these characters today</p>
+			<div class="col-xs-8">
+				<div id="barChart" style="width:100%;height:100vh;"></div>
 			</div>
-		</section>
+		</div>
 
 		<section class="timeline">
 		  <ul>
