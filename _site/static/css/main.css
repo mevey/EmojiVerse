@@ -29,10 +29,11 @@ p {
 .rain-box {
     padding:20px;
 }
-.rain-box .big-text {
-    font-size:32px;
+.big-text {
+    font-size:24px;
+    font-weight:500;
 }
-.rain-box .big-text small {
+.big-text small {
     font-size:14px;
     display:inline-block;
 }
@@ -43,10 +44,13 @@ p {
     margin-top:100px;
 }
 .welcome-banner h1 {
-    line-height: 40px;
+    line-height: 60px;
     font-weight:300;
-    font-family: "Lato",sans-serif;
+    font-family: "Montserrat",sans-serif;
     font-size:40px;
+}
+.welcome-banner p {
+    line-height:30px;
 }
 .meaning {
     padding:20px;
