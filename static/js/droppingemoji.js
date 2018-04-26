@@ -2,12 +2,12 @@ var myBarChart;
 var images = [
     "static/img/smiley.png",
     "static/img/heart.png",
-    "static/img/recycle.png",
+    "static/img/ok.png",
     "static/img/poop.png",
 ]
 var STATE = [0,0,0,0]
 
-var RATES = [1, 1, 3, 1]
+var RATES = [2, 1, 1, 1]
 
 function get_rates() {
     url = "http://emojitracker.com/api/rankings";

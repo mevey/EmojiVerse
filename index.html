@@ -5,11 +5,11 @@
     <link rel="stylesheet" href="static/css/main.css"/>
 </head>
 <body>
-    <div class="container" id="container">
-		<div class="row emoji-rain" style="height:100vh;">
+	<div class="row emoji-rain" style="height:100vh;">
+		<div class="container" id="container">
 			<div class="col-xs-4 welcome-banner" style="margin-top:20vh;">
 				<h1>Welcome to the <br></bt>EmojiVerse</h1>
-				<p>Uncover the history and evolution of the fastes growing "language" in history, as well as the meaning and usage of these characters today</p>
+				<p>Uncover the history and evolution of the fastest growing "language" in history, as well as the meaning and usage of these characters today</p>
 
 				<p><b>Real time use of emoji on twitter on select emoji is shown on the left.</b>
 					Emoji on twitter is used at a rate of <span class="big-text">300 emoji per second</span>
@@ -18,20 +18,22 @@
 
 				<br>
 				<h4>What are emoji and where do they come from?</h4>
-				<p>Keep Scrolling</p>
 				<img style="height:70px;" src="static/img/scrolling.gif"/>
 			</div>
 			<div class="col-xs-8">
 				<div id="barChart" style="width:100%;height:100vh;"></div>
 			</div>
 		</div>
+	</div>
 
-		<hr>
-		<div class="row">
+
+	<div class="row history">
+		<div class="container">
 			<div class="col-xs-4 he" style="margin-top:60px;">
 				<div class="sticky-header">
 					<h2 >History and Evolution</h2>
 					<p>Originally meaning pictograph, the word emoji comes from Japanese e (絵, "picture") + moji (文字, "character"). The resemblance to the English words emotion and emoticon is purely coincidental. Originally meaning pictograph, the word emoji comes from Japanese e (絵, "picture") + moji (文字, "character"). The resemblance to the English words emotion and emoticon is purely coincidental. </p>
+					<div id="line-graph"></div>
 				</div>
 			</div>
 			<div class="col-xs-8">
@@ -39,7 +41,9 @@
 				  <ul>
 					<li class='trigger' data-step='0'>
 					  <div>
-						<time>1999</time> Shigetaka Kurita creates emoji, a simple set of 176 “picture characters” or 12×12 pixel monochrome icons, meant to be sent alongside kanji or kana characters.
+						<time>1999</time>
+						  Shigetaka Kurita creates emoji, a simple set of 176 “picture characters” or 12×12 pixel monochrome icons, meant to be sent alongside kanji or kana characters.
+						  <img src="static/img/originalemoji.jpg" style="width:80%;margin:auto;padding:10px;">
 					  </div>
 					</li>
 					<li class='trigger' data-step='1'>
@@ -96,8 +100,11 @@
 				</div>
 			</div>
 		</div>
-		<hr>
-		<div class="row meaning">
+	</div>
+
+	<div class="meaning">
+		<div class="container">
+			<div class="row">
 				<div class="col-xs-12 text-center">
 				<h2>Meaning and Usage</h2>
 			</div>
@@ -140,18 +147,22 @@
 				<div class='tableauPlaceholder' id='viz1524636401969'><noscript><a href='#'><img alt='Sheet 2 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Em&#47;EmojiClusters&#47;Sheet2&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='EmojiClusters&#47;Sheet2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Em&#47;EmojiClusters&#47;Sheet2&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1524636401969');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
 			</div>
 		</div>
+	</div>
 
-		<hr>
-		<div class="footer row">
+
+	<div class="footer row">
+		<div class="container">
 			<p class="text-center">Team Emoji - Eve Mwangi, Joyce Lee, Tanya Piplani</p>
 		</div>
-    </div> <!--container -->
+	</div>
 
 
 <script type="text/javascript" src="static/js/vs/VisualSedimentation.js"></script>
 <script type="text/javascript" src="static/js/timeline.js"></script>
 <script type="text/javascript" src="static/js/droppingemoji.js"></script>
 <script type="text/javascript" src="static/js/sticky-kit.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<!--<script type="text/javascript" src="static/js/line.js"></script>-->
 <!--<script type="text/javascript" src="static/js/graph.js"></script>-->
 <!--<script type="text/javascript" src="static/js/graph-scroll.js"></script>-->
 <script>
@@ -167,6 +178,7 @@
 		//graphscroll();
 		$(".he").height($('.timeline').height() - 40);
 		$(".sticky-header").stick_in_parent();
+		//draw_line_graph()
 	})
 </script>
 
