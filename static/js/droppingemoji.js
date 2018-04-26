@@ -82,7 +82,7 @@ var WIDTH = $("#barChart").width();
       },
     },
     suspension:{
-      decay:{power:1.001}
+      decay:{power:1.01}
     }
     },
     chart:{
