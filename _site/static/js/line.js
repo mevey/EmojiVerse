@@ -1,67 +1,98 @@
-function draw_line_graph() {
-    // 2. Use the margin convention practice
-    var margin = {top: 50, right: 50, bottom: 50, left: 50}
-      , width = 300 // Use the window's width
-      , height = 400; // Use the window's height
+var circleCount = 8;
+var scale = 10;
+var IMG = [
+    //{"id":'&#x1F602;': values:{""}},
+     '&#x1F602;',
+    '&#x1F449',
+    '&#x2764',
+    '&#x1F602',
+    '&#x1F644',
+    '&#x1F60D',
+    '&#x1F602',
+    '&#x1F629',
+    '&#x1F495',
+    '&#x1F495',
+    '&#x1F495'
+]
 
-    // The number of datapoints
-    var n = 10;
-    data = [0, 176, 400, 800, 1200, 1500, 1600, 2000, 2600, 2600 ]
-    years = ["1999", "2007", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017"]
+class Circle {
+  constructor(id,diameter, highlighted, image,x,y){
+    this.id = ''+id;
+    this.diameter = 60;
+    this.x = x || 0;
+    this.y = y || 0;
+    this.highlighted = highlighted;
+    this.image = image;
+    return this;
+  }
+  
+  // Find a random non overlapping space for the circle to reside
+  randomOffsetFrom(previousCircle){
+    this.x = 30;
+    this.y = 0
+  }
+  
+  render($parent,time=0){
+    let $circle = $('<li><i data-attr="'+ this.image +'">'+ this.image +'<i/></li>')
+      $circle.addClass('circle');
+      if (this.highlighted) {
+        $circle.addClass('red');
+      }
+      var trueSize = this.diameter/scale + 'em'
+      $circle.css({
+        width: trueSize,
+        height: time ? 0 : trueSize,
+        marginTop: this.y/scale + 'em',
+        marginLeft: this.x/scale + 'em',
+        opacity: time ? 0 : 1
+      });
+    $parent.append($circle);
+    setTimeout(()=>{
+        $circle.animate({
+        width: trueSize,
+        height: trueSize,
+        opacity: 1
+      },time/2);
+    }, (+this.id * (time / circleCount)));
 
-    // 5. X scale will use the index of our data
-    var xScale = d3.scaleLinear()
-        .domain(years) // input
-        .range([0, width]); // output
+    $circle.click(function(d) {
+        console.log(this)
+    });
 
-    // 6. Y scale will use the randomly generate number
-    var yScale = d3.scaleLinear()
-        .domain([0, 3000]) // input
-        .range([height, 0]); // output
+    $parent.data(this.id,$circle)
+  }
+ 
+}
 
-    // 7. d3's line generator
-    var line = d3.line()
-        .x(function(d, i) { return xScale(i); }) // set the x values for the line generator
-        .y(function(d) { return yScale(d.y); }) // set the y values for the line generator
-        .curve(d3.curveMonotoneX) // apply smoothing to the line
+function circles() {
+  let previousCircle = {diameter:20,x:-25,y:-50};
+  let circles = []
+  for (var i = 0; i < 11; i++) {
+    if (i == 0) circles.push(new Circle(i, 20, true, IMG[i]))
+    else circles.push(new Circle(i, 20, false,IMG[i]))
+  }
+  function renderCircles($parent,circles,time){
+    circles.forEach(circle => circle.render($parent,time))
+  }
+  
+  circles = _.shuffle(circles);
+  
+  circles.forEach(circle => {
+    circle.randomOffsetFrom(previousCircle)
+    previousCircle = circle;
+  })
+  
+  let $random = $('#random');
+  let [bad,good] = _.partition(circles,'highlighted')
+  good.sort(function(a,b){
+      a.x = b.x = 15;
+      a.y = b.y = 0;
+    return a.diameter - b.diameter;
+   }).reverse()
+  good.splice(0, 0, bad[0])
 
-    // 8. An array of objects of length N. Each object has key -> value pair, the key being "y" and the value is a random number
+  renderCircles($random,good, 2400);
 
-    var dataset = d3.range(n).map(function(d, i) { return {"y": data[i]} })
 
-    // 1. Add the SVG to the page and employ #2
-    var svg = d3.select("#line-graph").append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-      .append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-    // 3. Call the x axis in a group tag
-    svg.append("g")
-        .attr("class", "x axis")
-        .attr("transform", "translate(0," + height + ")")
-        .text(function(d, i){
-            return years[i];
-        })
-        .call(d3.axisBottom(xScale)); // Create an axis component with d3.axisBottom
-
-    // 4. Call the y axis in a group tag
-    svg.append("g")
-        .attr("class", "y axis")
-        .call(d3.axisLeft(yScale)); // Create an axis component with d3.axisLeft
-
-    // 9. Append the path, bind the data, and call the line generator
-    svg.append("path")
-        .datum(dataset) // 10. Binds data to the line
-        .attr("class", "line") // Assign a class for styling
-        .attr("d", line); // 11. Calls the line generator
-
-    // 12. Appends a circle for each datapoint
-    svg.selectAll(".dot")
-        .data(dataset)
-      .enter().append("circle") // Uses the enter().append() method
-        .attr("class", "dot") // Assign a class for styling
-        .attr("cx", function(d, i) { return xScale(i) })
-        .attr("cy", function(d) { return yScale(d.y) })
-        .attr("r", 5);
+  
 }

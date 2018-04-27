@@ -1,4 +1,5 @@
 <head>
+	<meta charset='utf-8'>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Raleway" rel="stylesheet">
@@ -33,6 +34,8 @@
 				<div class="sticky-header">
 					<h2 >History and Evolution</h2>
 					<p>Originally meaning pictograph, the word emoji comes from Japanese e (絵, "picture") + moji (文字, "character"). The resemblance to the English words emotion and emoticon is purely coincidental. Originally meaning pictograph, the word emoji comes from Japanese e (絵, "picture") + moji (文字, "character"). The resemblance to the English words emotion and emoticon is purely coincidental. </p>
+					<p>Not only individuals but also business organizations have adopted emoji with a 777% year-over-year increase and 20% month-over-month increase in emoji usage for marketing campaigns in 20163. Major search engines, including Bing4
+						and Google , now support web searches involving emoji as search terms.</p>
 					<div id="line-graph"></div>
 				</div>
 			</div>
@@ -43,12 +46,14 @@
 					  <div>
 						<time>1999</time>
 						  Shigetaka Kurita creates emoji, a simple set of 176 “picture characters” or 12×12 pixel monochrome icons, meant to be sent alongside kanji or kana characters.
-						  <img src="static/img/originalemoji.jpg" style="width:80%;margin:auto;padding:10px;">
+						  <img class="mx-auto d-block img-fluid" src="static/img/originalemoji.jpg" style="width:80%;">
 					  </div>
 					</li>
 					<li class='trigger' data-step='1'>
 					  <div>
-						<time>2010</time> Emoji character sets are first incorporated into Unicode, a system for indexing characters. This standardization has allowed emojis to be used across different operating systems and by people around the world.
+						<time>2010</time>
+						  <img class="mx-auto d-block img-fluid" src="static/img/unicode.png" style="height:150px	;"><br>
+						  Emoji character sets are first incorporated into Unicode, a system for indexing characters. This standardization has allowed emojis to be used across different operating systems and by people around the world.
 					  </div>
 					</li>
 					<li class='trigger' data-step='2'>
@@ -148,6 +153,19 @@
 			</div>
 		</div>
 	</div>
+	<div class="similarity">
+		<div class="container">
+			<ul id="random"/></ul>
+			<div id="sorted">
+				<div class="col-xs-1">
+					<ul class="bad"></ul>
+				</div>
+				<div class="col-xs-11">
+					<ul class="good"></ul>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 	<div class="footer row">
@@ -162,7 +180,8 @@
 <script type="text/javascript" src="static/js/droppingemoji.js"></script>
 <script type="text/javascript" src="static/js/sticky-kit.js"></script>
 <script src="https://d3js.org/d3.v4.min.js"></script>
-<!--<script type="text/javascript" src="static/js/line.js"></script>-->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+<script type="text/javascript" src="static/js/line.js"></script>
 <!--<script type="text/javascript" src="static/js/graph.js"></script>-->
 <!--<script type="text/javascript" src="static/js/graph-scroll.js"></script>-->
 <script>
@@ -178,7 +197,7 @@
 		//graphscroll();
 		$(".he").height($('.timeline').height() - 40);
 		$(".sticky-header").stick_in_parent();
-		//draw_line_graph()
+		circles()
 	})
 </script>
 

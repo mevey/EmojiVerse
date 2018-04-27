@@ -96,6 +96,56 @@ p {
     stroke: #fff;
 }
 
+#random, #sorted {
+  display: inline-block;
+  list-style: none;
+  width: auto;
+}
+
+
+#sorted{
+  display:block;
+  margin:0 auto;
+  text-align:left;
+  visibility: hidden;
+}
+
+.circle {
+  display: inline-block;
+  position: relative;
+  border: 3px solid #EAC67A;
+  padding: 12px;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 100%;
+  text-align: center;
+
+}
+
+.circle.red {
+  border-color: #B82601;
+}
+
+
+
+.circle i {
+  display: block;
+  font-style: normal;
+  font-size: 20px;
+  line-height:1;
+  position: absolute;
+  top: 50%;
+  height: 20px;
+  margin-top: -10px;
+  left: 0px;
+  text-align: center;
+  width: 100%;
+}
+
+#sorted ul{
+padding-top: 55px;
+}
+
 /* TIMELINE
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
