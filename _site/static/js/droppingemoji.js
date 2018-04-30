@@ -45,6 +45,11 @@ function add_tokens(position) {
 
 }
 
+function clear_emoji() {
+   $("#barChart").html("") ;
+   myBarChart =  $("#barChart").vs(mySettings).data('visualSedimentation');
+}
+
 var HEIGHT = $("#barChart").height();
 var WIDTH = $("#barChart").width();
 
