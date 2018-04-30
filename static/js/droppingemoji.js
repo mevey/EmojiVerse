@@ -2,12 +2,13 @@ var myBarChart;
 var images = [
     "static/img/smiley.png",
     "static/img/heart.png",
-    "static/img/ok.png",
+    "static/img/world.png",
+    "static/img/cherry-blossom.png",
     "static/img/poop.png",
 ]
-var STATE = [0,0,0,0]
+var STATE = [0,0,0,0,0]
 
-var RATES = [2, 1, 1, 1]
+var RATES = [2, 1, 1, 1, 1]
 
 function get_rates() {
     url = "http://emojitracker.com/api/rankings";
@@ -19,11 +20,13 @@ function get_rates() {
                RATES[1] = (data[1].score - STATE[1] )
                RATES[2] = (data[2].score - STATE[2] )
                RATES[3] = (data[115].score - STATE[3] )
+               RATES[4] = (data[116].score - STATE[4] )
            }
            STATE[0] = data[0].score
            STATE[1] = data[1].score
            STATE[2] = data[2].score
            STATE[3] = data[115].score
+           STATE[4] = data[116].score
         }
     });
 }
@@ -51,20 +54,23 @@ var WIDTH = $("#barChart").width();
     data:{
          model:
             [
-              {label:"Nairobi"},
-              {label:"Athens"},
-              {label:"Bangkok"},
-              {label:"Reykjavik"},
+              {label:""},
+              {label:""},
+              {label:""},
+              {label:""},
+              {label:""},
             ],
         strata:[
               [
-                {initValue: 0, label: "Strata 1 col A", texture:{src:"/static/img/smiley.png", size:20}},
+                {initValue: 0, label: "Strata 1 col A"},
               ],[
-                {initValue: 0, label: "Strata 1 col B", texture:{src:"/static/img/smiley.png",size:20}},
+                {initValue: 0, label: "Strata 1 col B"},
               ],[
-                {initValue: 0, label: "Strata 1 col C" , texture:{src:"/static/img/smiley.png", size:20}}
+                {initValue: 0, label: "Strata 1 col C" }
               ],[
-                {initValue: 0, label: "Strata 1 col D", texture:{src:"/static/img/smiley.png", size:20}}
+                {initValue: 0, label: "Strata 1 col D"}
+              ],[
+                {initValue: 0, label: "Strata 1 col E"}
               ]
             ],
         stream:{

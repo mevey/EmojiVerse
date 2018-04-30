@@ -52,6 +52,9 @@ p {
     font-family: "Montserrat",sans-serif;
     font-size:36px;
 }
+.welcome-banner h4 {
+    line-height: 32px;
+}
 .welcome-banner p {
     line-height:30px;
 }
@@ -66,12 +69,12 @@ p {
     margin-top:40px;
 }
 .history {
-    background: rgb(2,0,36);
-    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(12,15,55,1) 35%, rgba(0,212,255,1) 100%);
-    color: #fff;
+    /**background: rgb(2,0,36);
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(12,15,55,1) 35%, rgba(0,212,255,1) 100%);**/
+    color: #212121;
 }
 .history p {
-    color:#fff;
+    /*color:#fff;*/
 }
 .footer {
     background: #323137;
