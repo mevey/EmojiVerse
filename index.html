@@ -131,19 +131,20 @@
 	<div class="row history">
 		<div class="container">
 			<div class="col-xs-12 text-center" style="margin-top:10vh;">
-				<!-- <div class="sticky-header"> -->
-					<h2>But where did emoji come from? 📍</h2>
-					<p>Originally meaning pictograph, the word emoji comes from Japanese: e
-						(絵, "picture") + moji (文字, "character"). Today, emoji are a complex
-						network of pictorial symbols that can be used in text – either as a
-						standalone character, with a modifier (for instance, skin tone), or in
-						a sequence, with a "zero width joiner" (or ZWJ, pronounced “zwidge”).
-						Read on for a history of how these characters have evolved over time.
-					</p><br><br>
-					<div id="line-graph"></div>
-				<!-- </div> -->
+				<h2>But where did emoji come from? 📍</h2>
+				<p>Originally meaning pictograph, the word emoji comes from Japanese: e
+					(絵, "picture") + moji (文字, "character"). Today, emoji are a complex
+					network of pictorial symbols that can be used in text – either as a
+					standalone character, with a modifier (for instance, skin tone), or in
+					a sequence, with a "zero width joiner" (or ZWJ, pronounced “zwidge”).
+					Read on for a history of how these characters have evolved over time.
+				</p><br><br>
 			</div>
-			<div class="col-xs-2"></div> <!-- for centering timeline -->
+			<div class="col-xs-4">
+				<div id="line-graph">
+					<svg id="svg"style="width:100%;height:400px;"></svg>
+				</div>
+			</div> <!-- for centering timeline -->
 			<div class="col-xs-8 ">
 				<div class="timeline">
 				  <ul>
@@ -286,7 +287,8 @@
 <script type="text/javascript" src="static/js/droppingemoji.js"></script>
 <script type="text/javascript" src="static/js/sticky-kit.js"></script>
 <script src="https://d3js.org/d3.v4.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.3.0/snap.svg-min.js"></script>
+<script type="text/javascript" src="static/js/line.js"></script>
 <script>
 	$( document ).ready(function() {
 		myBarChart =  $("#barChart").vs(mySettings).data('visualSedimentation');
@@ -301,8 +303,9 @@
 		setInterval(function(){ drop_emoji(4) }, 30000);
 		setInterval(function(){ clear_emoji() }, 60000 * 0.6);
 		timeline();
-		$(".he").height($('.timeline').height() - 40);
-		//$(".sticky-header").stick_in_parent();
+		//$(".he").height($('.timeline').height() - 40);
+		$("#line-graph").stick_in_parent();
+		draw_line_graph(20);
 
 	})
 </script>
