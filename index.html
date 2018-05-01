@@ -31,17 +31,37 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12" style="margin-top:10vh;">
-					<h2>So what do emoji mean? 🤔</h2>
-					<p>According to author <a href="https://books.google.ca/books?id=VPO4CgAAQBAJ&redir_esc=y" target="_blank">
-						Caroline Taggart</a>, the resemblance of "emoji" to the English word "emotion"
-						is purely a coincidence. While emoji often add nuance to text, they are
-						encoded in Unicode based primarily on appearance, not on an intended semantic. Many characters acquire multiple meanings based on their appearance (consider the 🍑
-							 and the 🍆). In fact, researchers found that
-							 <a href="https://grouplens.org/site-content/uploads/Emoji_Interpretation.pdf" target="_blank">about 25% of the time</a>,
-							  people disagree about whether the emotion being conveyed by an emoji
-								is positive, negative, or neutral – even when they are viewing
-								the same emoji on the same type of device.
-					</p><br>
+					<h2>What do emoji mean? 🤔</h2>
+					<p>Emoji are encoded in Unicode based primarily on appearance, not on
+						an intended semantic. In fact, many characters acquire multiple meanings
+						based on their appearance – consider the 🍑 and the 🍆 emoji. But with
+						embeddings from an <a href="https://github.com/uclmr/emoji2vec" target="_blank">"emoji2vec"</a>
+						repository, we can visualize emoji meaning in 3D space. To explore below, click on
+						any circle to select an emoji and see semantically similar neighbors.
+					</p><br><br>
+				</div>
+			</div>
+
+			<iframe class="col-xs-12" style="height:100vh;border:none;" src="https://projector.tensorflow.org/?config=https://gist.githubusercontent.com/tpiplani/e4580001076e7734403c1080f3f610e1/raw/7349d2eb162d7b2aebfbaa25119d098f6644a83c/config_file.json"></iframe>
+
+		</div>
+	</div>
+
+	<div class="usage">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12" style="margin-top:10vh;">
+					<h2>So, do emoji help us communicate? 💬</h2>
+					<p>Researchers have found that
+<a href="https://grouplens.org/site-content/uploads/Emoji_Interpretation.pdf" target="_blank">about 25% of the time</a>,
+					people disagree about whether the emotion being conveyed by an emoji
+					is positive, negative, or neutral – even when they are viewing the same
+					emoji on the same type of device. Yet, examining Jose Berengueres' <a href="https://www.kaggle.com/harriken/emoji-sentiment" target="_blank">
+						emoji sentiment dataset</a> below, we do see a general correlation between
+						sentiment of writers and readers of emoji: the symbols enable empathy, with
+						negative emoji in the bottom left, and more positive, celebratory emoji in
+						the top right.
+					 </p><br>
 				</div>
 			</div>
 			<div class="row">
@@ -50,16 +70,26 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-xs-12" style="margin-top:5vh;">
-					<p><i>Based on Jose Berengueres' <a href="https://www.kaggle.com/harriken/emoji-sentiment" target="_blank">
-						emoji <s></s>entiment dataset</a>, there is a general correlation between
-						sentiment of writers and readers of emoji: the symbols enable empathy, with
-						negative emoji in the bottom left, and more positive, celebratory emoji in
-						the top right.</i>
-					 </p><br>
+				<div class="col-xs-12 text-center" style="margin-top:10vh;">
+					<h4>"Traditional alphabet scripts have been struggling to meet the rapid-fire, visually
+					focused demands of 21st-century communication," says Casper Grathwohl,
+					President of <a href="https://www.oxforddictionaries.com/press/news/2016/9/2/WOTY"
+						target="_blank">Oxford Dictionaries</a>. "It's not surprising that a
+						pictographic script like emoji has stepped in to fill those gaps — it's
+						flexible, immediate, and infuses tone beautifully."</h4>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12" style="margin-top:10vh;">
+						<p>Examining the difference between reader and writer sentiment below,
+						however, some emojis do seem to mean more to one party than the other.
+						For instance, writers are more likely to have more positive sentiment
+						than readers with the 🍻 symbol – but less positive sentiment with the
+						😡 emoji. Writers and readers most align on sentiment with the 👌 hand.
+						</p><br>
 				</div>
 			</div>
-			<div class="col-xs-12 text-center" style="margin-top:5vh;">
+			<div class="col-xs-12 text-center" style="margin-top:10vh;">
 				<div class='tableauPlaceholder' id='viz1524636347532'>
 					<noscript>
 						<a href='#'>
@@ -86,41 +116,15 @@
 			</div>
 
 			<div class="row">
-				<div class="col-xs-12" style="margin-top:5vh;">
-					<p><i>But examining the difference between reader and writer sentiment, some
-					emojis mean more to one party than the other. For instance, writers are more
-					likely to have more positive sentiment than readers with </i> 🍻 <i> – but
-					less positive sentiment with</i> 😡. <i>Writers and readers most
-					align on sentiment with</i> 👌.
-					</p><br>
+				<div class="col-xs-12" style="margin-top:10vh;">
+
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-xs-12" style="margin-top:5vh;">
-					<h4>"Traditional alphabet scripts have been struggling to meet the rapid-fire, visually
-						focused demands of 21st-century communication. It's not surprising that a
-						pictographic script like emoji has stepped in to fill those gaps — it's
-						flexible, immediate, and infuses tone beautifully." - Casper Grathwohl,
-						President of <a href="https://www.oxforddictionaries.com/press/news/2016/9/2/WOTY"
-						target="_blank">Oxford Dictionaries</a></h4>
+					<h4>
 					</div>
 				</div>
-		</div>
-	</div>
-
-	<div class="emojiverse">
-		<div class="container" style="margin-top:5vh;">
-			<iframe class="col-xs-12" style="height:100vh;border:none;" src="https://projector.tensorflow.org/?config=https://gist.githubusercontent.com/tpiplani/e4580001076e7734403c1080f3f610e1/raw/7349d2eb162d7b2aebfbaa25119d098f6644a83c/config_file.json"></iframe>
-		</div>
-		<div class="row">
-			<div class="col-xs-10" style="margin-top:5vh;">
-				<p><i>But examining the difference between reader and writer sentiment, some
-				emojis mean more to one party than the other. For instance, writers are more
-				likely to have more positive sentiment than readers with </i> 🍻 <i> – but
-				less positive sentiment with</i> 😡. <i>Writers and readers most
-				align on sentiment with</i> 👌.
-				</p><br>
-			</div>
 		</div>
 	</div>
 
@@ -160,8 +164,8 @@
 					</li>
 					<li class='trigger' data-step='2'>
 					  <div>
-						<time>2011<br><br>iOS emoji keyboards 📱</time>Apple adds an emoji keyboard to iPhones and other
-						iOS devices, propelling more widespread adoption.
+						<time>2011<br><br>iOS emoji keyboards 📱</time>Apple adds an emoji
+						keyboard to iPhones and other iOS devices, propelling more widespread adoption.
 					  </div>
 					</li>
 					<li class='trigger' data-step='3'>
@@ -201,7 +205,7 @@
 						<time>2016<br><br>Gender diversity ♀️</time>
 						Unicode's new release introduces emoji of females as athletes and various other professions.
 						<br><br><time>Museum acquisition 🖼️</time>
-						The original collection of 176 emoji is acquired by Museum of Modern Art.
+						The original collection of 176 emoji is acquired by Museum of Modern Art in New York.
 					  </div>
 					</li>
 					<li class='trigger' data-step='8'>
@@ -233,9 +237,9 @@
 			<div class="row">
 				<div class="col-xs-12" style="margin-top:10vh;">
 					<h2>What is the future of emoji? 🔮</h2>
-					<p>You may already experience needing more and more time to find the right
-						symbol on a keyboard, as the number of encoded emoji continues to grow.
-						The Unicode Consortium anticipates a 60 character "emoji budget" per year,
+					<p>As the number of encoded emoji continues to grow, you may already
+						experience the struggle to find the right symbol quickly. The Unicode
+						Consortium currently anticipates a 60 character "emoji budget" per year,
 						until alternative solutions come into play. Such
 						<a href="http://www.unicode.org/reports/tr51/#Longer_Term" target="_blank">
 							longer-term solutions</a> include supporting embedded graphics (a.k.a. "stickers"),
@@ -257,13 +261,17 @@
 	</div>
 
 
-	<div class="footer row">
+	<div class="footer">
 		<div class="container">
-			<p class="text-center"><br>This website was created by
+			<p class="text-center"><br>
+				<a href="#eve"><img style="height:100px;" src="static/img/eve.png"/ hspace="20"></a>
+				<a href="#tanya"><img style="height:100px;" src="static/img/tanya.png"/ hspace="20"></a>
+				<a href="#joyce"><img style="height:100px;" src="static/img/joyce.png"/ hspace="20"></a>
+				<br><br>This website was created by
 				<a href="https://www.linkedin.com/in/evelyn-mwangi/" target="_blank">Eve Mwangi</a>,
 				<a href="https://www.linkedin.com/in/tanya-piplani/" target="_blank">Tanya Piplani</a>,
 				and <a href="https://www.joyceslee.com/" target="_blank">Joyce S. Lee</a>,<br> as a project
-				for the <a href="https://www.ischool.berkeley.edu/">School of Information
+				for the <a href="https://www.ischool.berkeley.edu/" target="_blank">School of Information
 					at the University of California, Berkeley</a>.
 			</p><br>
 		</div>
