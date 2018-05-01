@@ -136,11 +136,7 @@
 					Read on for a history of how these characters have evolved over time.
 				</p><br><br>
 			</div>
-			<div class="col-xs-4">
-				<div id="line-graph">
-					<svg id="svg"style="width:100%;height:400px;"></svg>
-				</div>
-			</div> <!-- for centering timeline -->
+			<div class="col-xs-2"></div><!--centers timeline-->
 			<div class="col-xs-8 ">
 				<div class="timeline">
 				  <ul>
@@ -152,7 +148,7 @@
 							of Japanese TV weather forecasts.
 					  </div>
 					</li>
-					<li class='trigger' data-step='1' styl>
+					<li class='trigger' data-step='1'>
 					  <div>
 						<time>2010<br><br>Worldwide standardization 🌎</time>
 							Emoji character sets are first incorporated into
@@ -279,7 +275,6 @@
 <script type="text/javascript" src="static/js/droppingemoji.js"></script>
 <script type="text/javascript" src="static/js/sticky-kit.js"></script>
 <script src="https://d3js.org/d3.v4.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.3.0/snap.svg-min.js"></script>
 <script type="text/javascript" src="static/js/line.js"></script>
 <script>
 	$( document ).ready(function() {
@@ -295,9 +290,9 @@
 		setInterval(function(){ drop_emoji(4) }, 30000);
 		setInterval(function(){ clear_emoji() }, 60000 * 0.6);
 		timeline();
-		//$(".he").height($('.timeline').height() - 40);
-		$("#line-graph").stick_in_parent();
-		draw_line_graph(20);
+		//$("#line-graph").stick_in_parent();
+		//$("#line-graph svg").attr("width", $("#line-graph").width() - 40 );
+		//draw_line_graph(12);
 
 	})
 </script>

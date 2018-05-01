@@ -88,13 +88,33 @@ h4 {
 }
 /* Line graph
 */
+.bar {
+  fill: steelblue;
+}
+.bar:hover {
+  fill: brown;
+}
+.axis--x path {
+  display: none;
+}
 .line {
-    fill: none;
-    stroke: #ffab00;
-    stroke-width: 3;
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 3px;
+}
+.circle {
+  fill: steelblue;
+}
+.affix {
+    top:50px;
+    position:fixed;
 }
 
 /* Style the dots by assigning a fill and stroke */
+#line-graph {
+    background:#fff;
+    padding:20px;
+}
 .dot {
     fill: #ffab00;
     stroke: #fff;
