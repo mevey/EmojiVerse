@@ -153,6 +153,9 @@ padding-top: 55px;
 span.main {
     padding:20px;
 }
+#appbar.vz-projector-app {
+    display:none !important;
+}
 
 /* TIMELINE
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
