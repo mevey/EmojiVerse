@@ -23,8 +23,6 @@ function timeline() {
       if (isElementInViewport(items[i])) {
         items[i].classList.add("in-view");
       }
-      start = start+1
-      updateData(start)
 
     }
   }
