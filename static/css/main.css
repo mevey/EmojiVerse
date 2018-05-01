@@ -59,7 +59,14 @@ h4 {
     line-height:30px;
 }
 .meaning {
-    padding:20px;
+    /* padding:20px; */
+    background: #323137;
+    padding-top: 70px;
+    padding-bottom: 160px;
+    color: #d1d2d8;
+}
+.meaning p {
+  color: #d1d2d8;
 }
 .underline {
     text-decoration:underline;
@@ -77,14 +84,8 @@ h4 {
 .history p {
     color:#fff;
 }
-.footer {
-    background: #323137;
-    /*padding-top: 70px;
-    padding-bottom: 160px;*/
-    color: #d1d2d8;
-}
 .footer p {
-    color:#fff;
+    color:#323137;
 }
 /* Line graph
 */
