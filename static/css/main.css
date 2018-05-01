@@ -60,13 +60,18 @@ h4 {
 }
 .meaning {
     /* padding:20px; */
-    background: #323137;
+    background: #560731;
     padding-top: 50px;
     padding-bottom: 160px;
-    color: #d1d2d8;
+    color: #fff;
 }
 .meaning p {
-  color: #d1d2d8;
+  color: #fff;
+  font-weight:500;
+}
+.meaning a{
+    color:#fff;
+    font-weight:700;
 }
 .underline {
     text-decoration:underline;
@@ -76,10 +81,11 @@ h4 {
     margin-top:40px;
 }
 .history {
-     background:#323137;
+     background:#560731;
     /**background: rgb(2,0,36);
     background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(12,15,55,1) 35%, rgba(0,212,255,1) 100%);**/
     color: #fff;
+    width:100%;
 }
 .history p {
     color:#fff;
