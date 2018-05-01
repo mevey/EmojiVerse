@@ -3,9 +3,11 @@ DATA = {"&#x1F3B5": [{"&#x1F3B6": 4.0}], "&#x1F3B6": [{"&#x1F3B5": 4.0}, {"&#x1F
 function draw_emoji_similarity() {
     html = ""
     for (var emoji in DATA) {
+        if (DATA[emoji].length < 4) continue
         html += "<div>"
         html += "<span class='main'>" + emoji + "</span>"
         seen = new Set()
+        seen.add(emoji)
         for (i in DATA[emoji]) {
             e2 = Object.keys(DATA[emoji][i])
             if (seen.has(e2)) continue

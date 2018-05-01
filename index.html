@@ -233,6 +233,12 @@
 
 	<div class="similarity">
 		<div class="container">
+			<div class="emoji-sim-header">
+				<span class="main"></span>
+				<span class="other">
+					<span>Most similar to least similar</span>
+				</span>
+			</div>
 			<div class="emoji-table">
 
 			</div>
@@ -302,7 +308,7 @@
 		setInterval(function(){ drop_emoji(3) }, 5000);
 		drop_emoji(4);
 		setInterval(function(){ drop_emoji(4) }, 30000);
-		setInterval(function(){ clear_emoji() }, 60000 * 2.5);
+		setInterval(function(){ clear_emoji() }, 60000 * 0.6);
 		timeline();
 		//graphscroll();
 		$(".he").height($('.timeline').height() - 40);
