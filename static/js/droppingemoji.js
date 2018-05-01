@@ -39,7 +39,6 @@ function drop_emoji(position) {
 
 function add_tokens(position) {
    if (!elementInViewport(document.getElementById("barChart"))) {
-    console.log("not in view")
     return
    }
    diff = Math.ceil(RATES[position])
