@@ -38,6 +38,10 @@ function drop_emoji(position) {
 }
 
 function add_tokens(position) {
+   if (!elementInViewport(document.getElementById("barChart"))) {
+    console.log("not in view")
+    return
+   }
    diff = Math.ceil(RATES[position])
    for (var i = 0; i < diff; i++ ) {
         myBarChart.addToken({category:position, texture: { src: images[position]}})
@@ -48,6 +52,26 @@ function add_tokens(position) {
 function clear_emoji() {
    $("#barChart").html("") ;
    myBarChart =  $("#barChart").vs(mySettings).data('visualSedimentation');
+}
+
+function elementInViewport(el) {
+  var top = el.offsetTop;
+  var left = el.offsetLeft;
+  var width = el.offsetWidth;
+  var height = el.offsetHeight;
+
+  while(el.offsetParent) {
+    el = el.offsetParent;
+    top += el.offsetTop;
+    left += el.offsetLeft;
+  }
+
+  return (
+    top >= window.pageYOffset &&
+    left >= window.pageXOffset &&
+    (top + height) <= (window.pageYOffset + window.innerHeight) &&
+    (left + width) <= (window.pageXOffset + window.innerWidth)
+  );
 }
 
 var HEIGHT = $("#barChart").height();

@@ -231,21 +231,6 @@
 		</div>
 	</div>
 
-	<div class="similarity">
-		<div class="container">
-			<div class="emoji-sim-header">
-				<span class="main"></span>
-				<span class="other">
-					<span>Most similar to least similar</span>
-				</span>
-			</div>
-			<div class="emoji-table">
-
-			</div>
-		</div>
-	</div>
-
-
 	<div class="future">
 		<div class="container">
 			<div class="row">
@@ -294,12 +279,10 @@
 <script type="text/javascript" src="static/js/sticky-kit.js"></script>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
-<script type="text/javascript" src="static/js/line.js"></script>
-<!--<script type="text/javascript" src="static/js/graph.js"></script>-->
-<!--<script type="text/javascript" src="static/js/graph-scroll.js"></script>-->
 <script>
 	$( document ).ready(function() {
 		myBarChart =  $("#barChart").vs(mySettings).data('visualSedimentation');
+
 		//setInterval(function(){ get_rates() }, 60000);
 		setInterval(function(){ drop_emoji(0) }, 500);
 		setInterval(function(){ drop_emoji(1) }, 700);
@@ -310,10 +293,9 @@
 		setInterval(function(){ drop_emoji(4) }, 30000);
 		setInterval(function(){ clear_emoji() }, 60000 * 0.6);
 		timeline();
-		//graphscroll();
 		$(".he").height($('.timeline').height() - 40);
 		//$(".sticky-header").stick_in_parent();
-		draw_emoji_similarity()
+
 	})
 </script>
 
