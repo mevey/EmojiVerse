@@ -21,7 +21,11 @@ function timeline() {
   function callbackFunc() {
     for (var i = 0; i < items.length; i++) {
       if (isElementInViewport(items[i])) {
+        console.log(i)
         items[i].classList.add("in-view");
+      }
+      if (i == 1 && (isElementInViewport(items[0]) || isElementInViewport(items[2]))) {
+        items[1].classList.add("in-view");
       }
 
     }
