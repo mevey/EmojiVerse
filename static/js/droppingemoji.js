@@ -8,30 +8,29 @@ var images = [
 ]
 var STATE = [0,0,0,0,0]
 
-var RATES = [2, 1, 1, 1, 1]
+var RATES = [1, 1, 1, 1, 1]
 
-function get_rates() {
-    url = "http://emojitracker.com/api/rankings";
-    $.ajax({
-        url:url,
-        success: function (data) {
-           if (STATE[0] > 0) {
-               RATES[0] = (data[0].score - STATE[0] )
-               RATES[1] = (data[1].score - STATE[1] )
-               RATES[2] = (data[2].score - STATE[2] )
-               RATES[3] = (data[115].score - STATE[3] )
-               RATES[4] = (data[116].score - STATE[4] )
-           }
-           STATE[0] = data[0].score
-           STATE[1] = data[1].score
-           STATE[2] = data[2].score
-           STATE[3] = data[115].score
-           STATE[4] = data[116].score
-        }
-    });
-}
+//function get_rates() {
+//    url = "http://emojitracker.com/api/rankings";
+//    $.ajax({
+//        url:url,
+//        success: function (data) {
+//           if (STATE[0] > 0) {
+//               RATES[0] = (data[0].score - STATE[0] )
+//               RATES[1] = (data[1].score - STATE[1] )
+//               RATES[2] = (data[2].score - STATE[2] )
+//               RATES[3] = (data[115].score - STATE[3] )
+//               RATES[4] = (data[116].score - STATE[4] )
+//           }
+//           STATE[0] = data[0].score
+//           STATE[1] = data[1].score
+//           STATE[2] = data[2].score
+//           STATE[3] = data[115].score
+//           STATE[4] = data[116].score
+//        }
+//    });
+//}
 
-get_rates()
 
 function drop_emoji(position) {
        add_tokens(position)

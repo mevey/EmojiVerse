@@ -17,7 +17,7 @@
 				<br>
 				<p>At right is real-time use of a few emoji on Twitter, according to
 					<a href="http://emojitracker.com/" target="_blank">EmojiTracker</a>.
-					"Face with tears of joy" is the most popular emoji, used 300 times per
+					"Face with tears of joy" is the most popular emoji, used on average 7 times per
 					second.</p>
 				<a href="#history"><img style="height:50px;" src="static/img/scrolling.gif"/></a>
 			</div>
@@ -274,6 +274,7 @@
 				for the <a href="https://www.ischool.berkeley.edu/" target="_blank">School of Information
 					at the University of California, Berkeley</a>.
 			</p><br>
+			<a href="http://visualsedimentation.org/documentation/index.html"> The dropping emoji graph was made possible by the Visual Sedimentation library</a>
 		</div>
 	</div>
 
@@ -281,25 +282,18 @@
 <script type="text/javascript" src="static/js/vs/VisualSedimentation.js"></script>
 <script type="text/javascript" src="static/js/timeline.js"></script>
 <script type="text/javascript" src="static/js/droppingemoji.js"></script>
-<script type="text/javascript" src="static/js/sticky-kit.js"></script>
 <script>
 	$( document ).ready(function() {
 		myBarChart =  $("#barChart").vs(mySettings).data('visualSedimentation');
+		setInterval(function(){ drop_emoji(0) }, 200); //on average 7 per second
+		setInterval(function(){ drop_emoji(1) }, 400); //on average 3 per second
+		setInterval(function(){ drop_emoji(2) }, 2500); //on average 0.4 per second
+		setInterval(function(){ drop_emoji(3) }, 3800); // on average 0.26 per second
+		setInterval(function(){ drop_emoji(4) }, 11000); //on average 0.09 per second
 
-		//setInterval(function(){ get_rates() }, 60000);
-		setInterval(function(){ drop_emoji(0) }, 500);
-		setInterval(function(){ drop_emoji(1) }, 700);
-		setInterval(function(){ drop_emoji(2) }, 1000);
-		drop_emoji(3);
-		setInterval(function(){ drop_emoji(3) }, 5000);
-		drop_emoji(4);
-		setInterval(function(){ drop_emoji(4) }, 30000);
 		setInterval(function(){ clear_emoji() }, 60000 * 0.6);
-		timeline();
-		//$("#line-graph").stick_in_parent();
-		//$("#line-graph svg").attr("width", $("#line-graph").width() - 40 );
-		//draw_line_graph(12);
 
+		timeline();
 	})
 </script>
 
