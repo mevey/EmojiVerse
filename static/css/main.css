@@ -52,6 +52,7 @@ a:hover {
 .welcome-banner {
     background: #fff;
     color:#000;
+    /* padding:40px; */
     margin-top:100px;
 }
 .welcome-banner h1 {
