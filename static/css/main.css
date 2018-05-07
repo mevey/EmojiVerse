@@ -69,7 +69,7 @@ h4 {
 }
 .meaning {
     /* padding:20px; */
-    background: #F7CA18;
+    background: #F4D03F; /*#F7CA18;*/
     padding-top: 50px;
     padding-bottom: 160px;
     color: #000;
@@ -227,7 +227,8 @@ span.main {
   width: 400px;
   padding: 15px;
   background: #fff;
-  color: #212121
+  color: #212121;
+  font-size:20px;
 }
 
 .timeline ul li div::before {
