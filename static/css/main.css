@@ -65,7 +65,7 @@ h4 {
     line-height: 32px;
 }
 .welcome-banner p {
-    line-height:36px;
+    line-height: 150%;
 }
 .meaning {
     /* padding:20px; */
@@ -262,7 +262,7 @@ span.main {
 
 time {
   display: block;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
   margin-bottom: 8px;
 }
@@ -276,7 +276,7 @@ time {
 }
 
 .timeline ul li.in-view::after {
-  background: #fff;
+  background: #d13e39;
 }
 
 .timeline ul li div {
