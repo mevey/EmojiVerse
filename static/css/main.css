@@ -99,8 +99,20 @@ h4 {
 .history p {
     color:#000;
 }
+
+.future {
+  background: #F4D03F; /*#F7CA18;*/
+
+}
+
+.footer {
+  background: #F4D03F; /*#F7CA18;*/
+}
+
 .footer p {
     color:#323137;
+    font-size:12px;
+    line-height: normal;
 }
 /* Line graph
 */
